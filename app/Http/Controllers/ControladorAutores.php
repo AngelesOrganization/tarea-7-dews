@@ -14,7 +14,7 @@ class ControladorAutores extends Controller
      */
     public function index()
     {
-        return view('autores', ['autores' => Autores::all()]);
+        return Autores::all();
     }
 
     /**
@@ -54,9 +54,7 @@ class ControladorAutores extends Controller
      */
     public function show($id)
     {
-        return view('libros-autor')
-            ->with('libros', Autores::find($id)->libros)
-            ->with('id_autor', $id);
+        return Autores::with('libros')->find($id);
     }
 
     /**

@@ -17,9 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('titulo');
             $table->string('f_publicacion');
-            $table->string('sinopsis');
             $table->string('id_autor');
-            $table->timestamps();
             $table->foreign('id_autor')
                     ->references('id')
                     ->on('autores')
